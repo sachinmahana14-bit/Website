@@ -1,0 +1,46 @@
+<!D=OCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mera 4 Gaon - Cadastral View</title>
+<style>
+  body{margin:0; padding:0; font-family:sans-serif;}
+  .top{ background:#2c3e9e; color:white; padding:12px; text-align:center; font-weight:bold; font-size:18px; }
+  .btns{ display:flex; gap:5px; padding:8px; background:#f1f1f1; overflow-x:auto; white-space:nowrap; }
+  .btns button{ padding:10px 14px; border-radius:20px; border:1px solid #ccc; background:white; font-weight:bold; }
+  .btns button.active{ background:#2c3e9e; color:white; }
+  iframe{ width:100%; height:calc(100vh - 105px); border:none; }
+  .note{ font-size:12px; text-align:center; padding:5px; background:#fff3cd; }
+</style>
+</head>
+<body>
+
+<div class="top">🌾 Mera 4 Gaon - Cadastral View - Govt. of Odisha</div>
+
+<div class="btns">
+  <button id="b1" class="active" onclick="kholGaon('Kushanpuri','b1')">Kushanpuri</button>
+  <button id="b2" onclick="kholGaon('Lenda','b2')">Lenda</button>
+  <button id="b3" onclick="kholGaon('Bahiapadar','b3')">Bahiapadar</button>
+  <button id="b4" onclick="kholGaon('Julat','b4')">Julat</button>
+</div>
+
+<div class="note">👇 Neeche Sarkari Map khulega - Usme <b>Show Your Location</b> dabao, tumhara neela dot aa jayega</div>
+
+<!-- YEHI TUMHARA ASLI MAP HAI -->
+<iframe id="sarkariMap" src="https://odisha4kgeo.in/" allow="geolocation *; camera *"></iframe>
+
+<script>
+  function kholGaon(gaon, btnId){
+    // Button ka rang badlo
+    document.querySelectorAll('.btns button').forEach(b=>b.classList.remove('active'));
+    document.getElementById('').classList.add('active');
+    
+    // Map ko reload karo - Sarkari site khulegi
+    // Usme upar search me gaon ka naam likhna hoga ek baar
+    document.getElementById('bhunakshaodisha').src = "https://odisha4kgeo.in/index.html";
+    alert(gaon + " khol diya hai! \n\nAb neeche wale Map me Search me '" + gaon + "' likh ke Select karo, poora Cadastral Map Plot No. ke saath aa jayega.");
+  }
+</script>
+
+</body>
+</html>
